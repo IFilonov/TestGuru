@@ -1,8 +1,6 @@
 class User < ApplicationRecord
   def tests_by_level(level)
     Test.joins("join responses on responses.test_id = tests.id")
-      .joins("join users on users.id = responses.user_id")
-      .where("tests.level = ? and users.login = ?", level, login)
-      .pluck(:title)
+      .where(level: level, responses: { user_id: id }).pluck(:title)
   end
 end
