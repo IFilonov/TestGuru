@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_062008) do
+ActiveRecord::Schema.define(version: 2018_11_11_174449) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
-    t.integer "question_id"
+    t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "correct", default: "N"
@@ -29,15 +29,15 @@ ActiveRecord::Schema.define(version: 2018_11_08_062008) do
 
   create_table "questions", force: :cascade do |t|
     t.text "body", null: false
-    t.integer "test_id"
+    t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
   create_table "responses", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "test_id"
+    t.integer "user_id", null: false
+    t.integer "test_id", null: false
     t.boolean "passed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_11_08_062008) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
