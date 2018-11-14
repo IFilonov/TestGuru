@@ -7,7 +7,7 @@ class Answer < ApplicationRecord
   validate :max_answers, on: :create
 
   def max_answers
-    errors.add(:question_id) << "Cannot add more then 4 question" if Answer.
-      where(question: question).count() >= 4
+    err_msg = "Cannot add more then 4 question"
+    errors.add(:question_id) << err_msg if question.answers.count >= 4
   end
 end
