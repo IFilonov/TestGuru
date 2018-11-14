@@ -14,6 +14,13 @@ class Test < ApplicationRecord
 
   validates :title, presence: true
   validates :level, format: { with: /\A[\d]+\z/, message: "Only digits are possible" }
+  validate :check_test, on: :create
+
+  def check_test
+    errors.add(:title, :level) << "Such test already exist" if Test.
+      where(level: level, title: title).count >= 1
+  end
+
 
   def self.tests_by_category(category)
     joins("join categories on tests.category_id = categories.id")
