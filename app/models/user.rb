@@ -5,8 +5,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true
 
-  def tests_by_level(level)
-    Test.joins("join responses on responses.test_id = tests.id")
-      .where(level: level, responses: { user_id: id }).pluck(:title)
+  def by_level(level)
+    tests.by_level(level)
   end
 end
