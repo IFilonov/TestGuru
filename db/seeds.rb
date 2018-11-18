@@ -25,11 +25,11 @@ questions = Question.create([
 Answer.create([
   { body: 'nil',  question_id: questions[0].id },
   { body: '0',    question_id: questions[0].id },
-  { body: '1',    question_id: questions[0].id, correct: 'Y' },
+  { body: '1',    question_id: questions[0].id, correct: true },
   { body: 'true', question_id: questions[0].id },
 
   { body: '==',   question_id: questions[1].id },
-  { body: '!==',  question_id: questions[1].id, correct: 'Y' },
+  { body: '!==',  question_id: questions[1].id, correct: true },
   { body: '!=',   question_id: questions[1].id },
   { body: '===',  question_id: questions[1].id },
   { body: '<=>',  question_id: questions[1].id },
@@ -37,27 +37,27 @@ Answer.create([
   { body: '@@', question_id: questions[2].id },
   { body: '@',  question_id: questions[2].id },
   { body: '#',  question_id: questions[2].id },
-  { body: '$',  question_id: questions[2].id, correct: 'Y' },
+  { body: '$',  question_id: questions[2].id, correct: true },
 
   { body: 'Array.new(10,0)',  question_id: questions[3].id },
   { body: '[*0..10]',         question_id: questions[3].id },
   { body: 'Array.new(10)',    question_id: questions[3].id },
   { body: '%w[1, 2, 3]',      question_id: questions[3].id },
-  { body: 'Array.new(0..10)', question_id: questions[3].id, correct: 'Y' },
+  { body: 'Array.new(0..10)', question_id: questions[3].id, correct: true },
 
   { body: 'db',           question_id: questions[4].id },
   { body: 'lib',          question_id: questions[4].id },
   { body: 'config',       question_id: questions[4].id },
-  { body: 'являются все', question_id: questions[4].id, correct: 'Y' },
+  { body: 'являются все', question_id: questions[4].id, correct: true },
 
   { body: 'config.db',  question_id: questions[5].id },
   { body: 'seeds.rb',   question_id: questions[5].id },
   { body: 'schema.db',  question_id: questions[5].id },
-  { body: 'default.rb', question_id: questions[5].id, correct: 'Y' },
+  { body: 'default.rb', question_id: questions[5].id, correct: true },
 
   { body: 'PUT',    question_id: questions[6].id },
   { body: 'GET',    question_id: questions[6].id },
-  { body: 'UPDATE', question_id: questions[6].id, correct: 'Y' },
+  { body: 'UPDATE', question_id: questions[6].id, correct: true },
   { body: 'DELETE', question_id: questions[6].id },
   { body: 'POST',   question_id: questions[6].id }
   ])

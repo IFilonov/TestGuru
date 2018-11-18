@@ -2,8 +2,10 @@ class User < ApplicationRecord
   has_many :responses
   has_many :tests, through: :responses
   has_many :test, foreign_key: "author_id"
-  def tests_by_level(level)
-    Test.joins("join responses on responses.test_id = tests.id")
-      .where(level: level, responses: { user_id: id }).pluck(:title)
+
+  validates :email, presence: true
+
+  def by_level(level)
+    tests.by_level(level)
   end
 end
