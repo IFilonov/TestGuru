@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, only: %i[index]
-  before_action :find_question, only: %i[show]
+  before_action :find_test, only: %i[index create]
+  before_action :find_question, only: %i[show destroy]
+  skip_before_action :verify_authenticity_token
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -14,6 +15,15 @@ class QuestionsController < ApplicationController
 
   def show
    render html: "<i> #{@question.body}</i>".html_safe
+  end
+
+  def create
+    question = @test.questions.new(body: params[:body])
+    render html: "<i> #{question.body}</i>".html_safe
+  end
+
+  def destroy
+    @question.destroy
   end
 
   private
