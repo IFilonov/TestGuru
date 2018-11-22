@@ -4,21 +4,11 @@
 		<title>Example to use Question controller methods</title>
 	</head>
 	<body>
-		<form action = "/tests/1/questions" method = "GET">
-      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-			<input type = "submit" value="Index Tests/1/questions ">
-		</form>
-    <br>
     <form action = "/tests/1/questions" method = "POST">
       <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
       <label for="question-body">Question body</label>
       <input type="text" name="body" id="question-body">
       <input type = "submit" value="Create tests/1/questions">
     </form>
-    <br>
-    <form action = "/tests/1/questions" method = "DELETE">
-      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-			<input type = "submit" value="Delete questions/1">
-		</form>
 	</body>
 </html>
