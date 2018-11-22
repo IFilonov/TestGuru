@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create]
   before_action :find_question, only: %i[show destroy]
 
-#  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
     str_index = "<table>"
