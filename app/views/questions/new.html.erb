@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Example to use Question controller methods</title>
+	</head>
+	<body>
+    <form action = "/tests/1/questions" method = "POST">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <label for="question-body">Question body</label>
+      <input type="text" name="body" id="question-body">
+      <input type = "submit" value="Create tests/1/questions">
+    </form>
+	</body>
+</html>
