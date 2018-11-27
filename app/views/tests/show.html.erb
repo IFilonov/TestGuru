@@ -1,0 +1,12 @@
+<p>Test: <b><%= @test.title %></b></p>
+<table border=2>
+<tr>
+  <th>Questions</th>
+  <th colspan="3">Actions</th>
+</tr>
+<%= render partial: 'questions/question', collection: @test.questions %>
+</table>
+<br>
+<%= link_to 'New question', new_test_question_path(@test) %>
+<br>
+<%= link_to 'Back', tests_path %>
