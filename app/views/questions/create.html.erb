@@ -1,6 +1,0 @@
-<% if @question.save %>
-   <p>Question <b> <%= @question.body %></b> created</p>
-<% else %>
-   <p>Question <b> <%= @question.body %></b> not created</p>
-<% end %>
-<%= link_to 'Back', test_path(@question.test) %>

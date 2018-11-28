@@ -1,7 +1,7 @@
 module QuestionsHelper
-  def question_header(create = true)
-    title = @test.title.capitalize
-    if create
+  def question_header(question)
+    title = question.test.title.capitalize
+    if question.new_record?
       "Create New #{title} Question"
     else
       "Edit #{title} Question"

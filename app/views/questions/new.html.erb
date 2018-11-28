@@ -1,8 +1,2 @@
-<%= question_header %>
-<%= form_with model: @question, method: :post, url: {action: "create"}, local: true do |form| %>
-  <p>
-    <%= form.label :body %><br />
-    <%= form.text_field :body, id: :question_body %>
-  </p>
-  <p><%= form.submit %></p>
-<% end %>
+<%= question_header(@question) %>
+<%= render 'form' %>
