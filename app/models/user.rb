@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def by_level(level)
     tests.by_level(level)
   end
+
+  def current_test(test)
+    responses.order(id: :desc).find_by(test_id: test.id)
+  end
 end

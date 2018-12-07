@@ -1,6 +1,7 @@
 class TestsController < ApplicationController
 
   before_action :find_test, only: %i[show]
+  before_action :set_user, only: :start
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -11,6 +12,12 @@ class TestsController < ApplicationController
   def show
   end
 
+  def start
+    find_test
+    @user.tests.push(@test)
+    redirect_to @user.current_test(@test)
+  end
+
   private
 
   def find_test
@@ -19,5 +26,9 @@ class TestsController < ApplicationController
 
   def rescue_with_test_not_found
     render html: "<b>Couldn't find test with id = #{params[:id]}</b>".html_safe
+  end
+
+  def set_user
+    @user = User.first
   end
 end
