@@ -1,0 +1,12 @@
+<%= form_with  model: @user, local: true do |form| %>
+  <p>
+    <%= form.label :login %><br />
+    <%= form.text_field :login, id: :user_login %>
+  </p>
+  <p>
+    <%= form.label :email %><br />
+    <%= form.text_field :email, id: :user_email %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>

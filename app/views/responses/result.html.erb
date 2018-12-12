@@ -1,0 +1,10 @@
+<h1>Test <%= @response.test.title %> was completed!</h1>
+<p>Correct questions:
+<b>
+<% if result_success? %>
+   <font color="green"> <%= test_result %>%</font></b>. Test passed. Congratulations!
+<% else %>
+   <font color="red"> <%= test_result %>%</font></b>. Test doesn't passed
+<% end %>
+</p>
+<%= link_to 'Tests', tests_path %>
