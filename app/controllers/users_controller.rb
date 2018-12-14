@@ -13,8 +13,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to tests_path
-      #render html: "User <b>#{user.login}</b> created".html_safe
     else
       render :new #html: "User <b>#{user.login}</b> not created".html_safe
     end
