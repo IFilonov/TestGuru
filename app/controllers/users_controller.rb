@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!
   before_action :find_user, only: %i[destroy]
 
   def index
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to tests_path
     else
-      render :new #html: "User <b>#{user.login}</b> not created".html_safe
+      render :new
     end
   end
 
