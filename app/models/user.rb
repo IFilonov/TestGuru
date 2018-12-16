@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :tests, through: :responses
   has_many :test, foreign_key: "author_id"
 
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_secure_password
 

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'tests#index'
   get :signup, to: "users#new"
   get :login, to: "sessions#new"
+  get :delete, to: "sessions#delete"
 
   resources :tests do
     resources :questions, shallow: true do
