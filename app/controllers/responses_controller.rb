@@ -1,4 +1,6 @@
 class ResponsesController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :set_response, only: %i[show update result]
 
   def show
