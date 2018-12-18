@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <p class="nav user">
+        Welcome, <b><%= current_user.email %></b> Guru |
+        <%= link_to 'Log out', delete_path, method: :get %>
+      <p>
+    <% end %>
+
+    <%= render 'shared/flash' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
