@@ -12,6 +12,7 @@ class ResponsesController < ApplicationController
   def update
     @response.accept!(params[:answer_ids])
     if @response.completed?
+      TestsMailer.completed_test(@response).deliver_now
       redirect_to result_response_path(@response)
     else
       render :show
