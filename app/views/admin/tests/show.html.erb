@@ -7,6 +7,8 @@
 <%= render @test.questions %>
 </table>
 <br>
-<%= link_to 'New question', new_test_question_path(@test) %>
+<%= link_to 'New question', new_admin_test_question_path(@test) %>
 <br>
-<%= link_to 'Back', tests_path %>
+<%= link_to 'Edit', edit_admin_test_path(@test) %>
+<br>
+<%= link_to 'Back', admin_tests_path %>

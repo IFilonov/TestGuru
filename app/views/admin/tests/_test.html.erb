@@ -2,6 +2,11 @@
     <td><%= test.title %></td>
     <td><%= test.level %></td>
     <td><%= test.questions.size %></td>
-    <td><%= link_to 'Show', test_path(test)  %></td>
-    <td><%= button_to 'Start', start_test_path(test), method: :post  %></td>
+    <td><%= link_to 'Show', admin_test_path(test)  %></td>
+    <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
+    <td><%= link_to 'Delete',
+                     admin_test_path(test),
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' } %>
+     </td>
   </tr>
