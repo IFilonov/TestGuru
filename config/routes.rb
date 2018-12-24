@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get :delete, to: "sessions#delete"
 
   resources :tests, only: :index do
-    end
     member do
       post :start
     end
@@ -24,6 +23,6 @@ Rails.application.routes.draw do
       resources :questions, except: :index, shallow: true do
         resources :answers, shallow: true, except: :index
       end
-    end  
+    end
   end
 end
