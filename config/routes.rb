@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get :delete, to: "sessions#delete"
 
   resources :tests, only: :index do
-    resources :questions, except: :index, shallow: true do
-      resources :answers, shallow: true, except: :index
     end
     member do
       post :start
@@ -22,6 +20,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :tests
+    resources :tests do
+      resources :questions, except: :index, shallow: true do
+        resources :answers, shallow: true, except: :index
+      end
+    end  
   end
 end
