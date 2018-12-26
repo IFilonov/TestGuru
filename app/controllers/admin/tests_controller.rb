@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
-
+    @test.author = current_user
     if @test.save
       redirect_to admin_test_path(@test)
     else
@@ -37,7 +37,6 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-
     redirect_to admin_tests_path
   end
 

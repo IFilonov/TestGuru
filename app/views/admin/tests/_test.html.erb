@@ -2,6 +2,7 @@
     <td><%= test.title %></td>
     <td><%= test.level %></td>
     <td><%= test.questions.size %></td>
+    <td><%= test.author.email %></td>  
     <td><%= link_to 'Show', admin_test_path(test)  %></td>
     <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
     <td><%= link_to 'Delete',
