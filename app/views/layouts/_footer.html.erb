@@ -1,5 +1,6 @@
 <br>
-<p><%= time %> Filonov Igor</p>
-<%= github_url("IFilonov", "TestGuru GitHub")%>
+<p><%= time %>
+  <%= I18n.t('.author') %></p>
+<%= github_url("IFilonov", "TestGuru")%>
 <br>
-<%= link_to "Учебный проект в онлайн-школе Thinknetica", "https://thinknetica.com", target: :blank %>
+<%= link_to I18n.t('.project'), "https://thinknetica.com", target: :blank %>

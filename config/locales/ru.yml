@@ -1,2 +1,72 @@
 ru:
-  hello: "Привет мир"
+  tests:
+    test:
+      start: "Старт"
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions_number: "Количество вопросов"
+      action: "Действие"
+  author: "Игорь Филонов"
+  project: "Учебный проект в онлайн-школе Thinknetica"
+  admin:
+    tests:
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        questions_number: "Количество вопросов"
+        author: "Автор"
+        action: "Действие"
+      new:
+        header: "Создать новый тест"
+        back: "Назад"
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        are_you_sure: "Вы уверены?"
+      edit:
+        back: "Назад"
+        edit_test: "Редактировать тест %{title}"
+      show:
+        test: "Вопросы теста %{test}"
+        questions: "Вопросы"
+        actions: "Действия"
+        new_question: "Новый вопрос"
+        edit: "Редактировать тест"
+        back: "Назад"
+    questions:
+      edit:
+        back: "Назад"
+      show:
+        edit: "Редактировать вопрос"
+        back: "Назад"
+      question:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        are_you_sure: "Вы уверены?"
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Редактировать вопрос"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: "Содержание"
+  layouts:
+    admin:
+      admin_panel: "Панель администратора, ТестГуру"
+    application:
+      testguru: "ТестГуру"
+  create_new_question: "Создать новый вопрос для теста %{title}"
+  edit_question: "Редактировать вопрос теста %{title}"
