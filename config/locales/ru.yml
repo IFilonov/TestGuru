@@ -48,6 +48,11 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         are_you_sure: "Вы уверены?"
+    nav:
+      testguru_admin_panel: "Панель администратора ТестГуру"
+      log_out: "Выход"
+      welcome: "Добро пожаловать"
+      guru: "Гуру"      
   helpers:
     submit:
       test:
