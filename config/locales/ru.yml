@@ -52,7 +52,7 @@ ru:
       testguru_admin_panel: "Панель администратора ТестГуру"
       log_out: "Выход"
       welcome: "Добро пожаловать"
-      guru: "Гуру"      
+      guru: "Гуру"
   helpers:
     submit:
       test:
@@ -68,6 +68,8 @@ ru:
         category_id: "Категория"
       question:
         body: "Содержание"
+    select:
+      prompt: "Пожалуйста, выберите"     
   layouts:
     admin:
       admin_panel: "Панель администратора, ТестГуру"
