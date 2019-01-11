@@ -19,6 +19,7 @@ ru:
         questions_number: "Количество вопросов"
         author: "Автор"
         action: "Действие"
+        new: "Создать новый тест"
       new:
         header: "Создать новый тест"
         back: "Назад"
@@ -69,7 +70,7 @@ ru:
       question:
         body: "Содержание"
     select:
-      prompt: "Пожалуйста, выберите"     
+      prompt: "Пожалуйста, выберите"
   layouts:
     admin:
       admin_panel: "Панель администратора, ТестГуру"
