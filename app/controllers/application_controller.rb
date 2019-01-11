@@ -1,22 +1,20 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_user, :logged_in?
+  before_action :set_locale
 
-  def logged_in?
-    current_user.present?
+  def default_url_options
+    locale = I18n.locale == I18n.default_locale ? nil : I18n.locale
+    { lang: locale }
   end
 
-  private
+  protected
 
-  def authenticate_user!
-    unless current_user
-      cookies[:start_page] = request.url
-      redirect_to login_path
-    end
+  def after_sign_in_path_for(user)
+    flash.notice = "Привет, #{current_user.first_name}!" if current_user.first_name
+    current_user.is_a?(Admin) ? admin_tests_path : super
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  def set_locale
+    I18n.locale = I18n.locale_available?(params[:lang])  ? params[:lang] : I18n.default_locale
   end
-
 end

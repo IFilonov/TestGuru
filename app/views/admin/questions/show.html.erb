@@ -1,0 +1,4 @@
+<p> <%= @question.body %> </p>
+<%= link_to t('.edit'), edit_admin_question_path(@question) %>
+<br>
+<%= link_to t('.back'), admin_test_path(@question.test) %>

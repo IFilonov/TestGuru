@@ -1,0 +1,14 @@
+<p><%= t('.test', test: @test.title) %></p>
+<table border=2>
+<tr>
+  <th><%= t('.questions') %></th>
+  <th colspan="3"><%= t('.actions') %></th>
+</tr>
+<%= render @test.questions %>
+</table>
+<br>
+<%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
+<br>
+<%= link_to t('.edit'), edit_admin_test_path(@test) %>
+<br>
+<%= link_to t('.back'), admin_tests_path %>

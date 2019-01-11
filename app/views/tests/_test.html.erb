@@ -2,6 +2,5 @@
     <td><%= test.title %></td>
     <td><%= test.level %></td>
     <td><%= test.questions.size %></td>
-    <td><%= link_to 'Show', test_path(test)  %></td>
-    <td><%= button_to 'Start', start_test_path(test), method: :post  %></td>
+    <td><%= button_to t('.start'), start_test_path(test), method: :post  %></td>
   </tr>
