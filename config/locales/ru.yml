@@ -44,6 +44,7 @@ ru:
       show:
         edit: "Редактировать вопрос"
         back: "Назад"
+        question: "Вопрос"
       question:
         show: "Показать"
         edit: "Редактировать"
