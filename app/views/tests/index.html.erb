@@ -1,10 +1,14 @@
+<div class="row justify-content-center mt-3">
 <h1><%= t('.header') %></h1>
-<table border=2>
-  <tr>
+</div>
+<table class="table">
+  <thead>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
     <th><%= t('.questions_number') %></th>
     <th colspan="1"><%= t('.action') %></th>
-  </tr>
-  <%= render @tests %>
+  </thead>
+  <tbody>
+    <%= render @tests %>
+  </tbody>
 </table>
