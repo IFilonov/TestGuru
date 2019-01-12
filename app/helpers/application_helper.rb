@@ -1,4 +1,9 @@
 module ApplicationHelper
+  ALERT_TYPES = {
+    alert: "danger",
+    notice: "info"
+  }
+
   def time
      Time.current.year
   end
@@ -7,8 +12,10 @@ module ApplicationHelper
     link_to repo, "https://github.com/#{author}/#{repo}", target: :blank
   end
 
-  def flash_message(type)
-    content_tag :p, flash[type], class: "flash #{type}"
+  def flash_messages
+    flash.map do |type, message|
+      class_type = "alert alert-#{ALERT_TYPES[type.to_sym]}"
+      content_tag :div, message, class: class_type, role: 'alert'
+    end.join("\n").html_safe
   end
-
 end
