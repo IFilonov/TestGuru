@@ -1,15 +1,24 @@
-<h1>Passing the <%= @response.test.title %> test</h1>
-<p> Question number/all questions:  <%= @response.correct_questions %> /
-<%= @response.test.questions.count %></p>
-<b>
-  <%= @response.question.body %>
-</b>
-<%= form_with url: response_path(@response), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @response.question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
-  <p><%= form.submit 'Next' %></p>
-<% end %>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
+    <h1>Passing the <%= @response.test.title %> test</h1>
+    <h3> Question number/all questions:  <%= @response.correct_questions %> /
+      <%= @response.test.questions.count %>
+    </h3>
+    <div class="card">
+      <div class="card-header">
+         <b> <%= @response.question.body %> </b>
+      </div>
+      <ul class="list-group list-group-flush">
+        <%= form_with url: response_path(@response), local: true, method: :put do |form| %>
+          <%= form.collection_check_boxes :answer_ids, @response.question.answers, :id, :body, include_hidden: false do |b| %>
+            <li class="list-group-item">
+              <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+              <%= b.label %>
+            </li>
+          <% end %>
+      </ul>
+        <%= form.submit 'Next', class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

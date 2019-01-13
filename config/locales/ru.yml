@@ -44,6 +44,7 @@ ru:
       show:
         edit: "Редактировать вопрос"
         back: "Назад"
+        question: "Вопрос"
       question:
         show: "Показать"
         edit: "Редактировать"
@@ -54,6 +55,7 @@ ru:
       log_out: "Выход"
       welcome: "Добро пожаловать"
       guru: "Гуру"
+      testguru: "ТестГуру"      
   helpers:
     submit:
       test:
@@ -76,5 +78,12 @@ ru:
       admin_panel: "Панель администратора, ТестГуру"
     application:
       testguru: "ТестГуру"
+  shared:
+    nav:
+      testguru: "ТестГуру"
+      log_out: "Выход"
+      welcome: "Добро пожаловать"
+      guru: "Гуру"
+      sign_up: "Регистрация"
   create_new_question: "Создать новый вопрос для теста %{title}"
   edit_question: "Редактировать вопрос теста %{title}"
