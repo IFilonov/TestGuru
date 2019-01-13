@@ -2,7 +2,7 @@ module ApplicationHelper
   ALERT_TYPES = {
     alert: "danger",
     notice: "info"
-  }
+  }.freeze
 
   def time
      Time.current.year
