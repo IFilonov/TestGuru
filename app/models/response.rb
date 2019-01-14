@@ -15,6 +15,10 @@ class Response < ApplicationRecord
     save!
   end
 
+  def question_number
+    test.questions.index(question) + 1
+  end
+
   private
 
   def before_validation_set_first_question

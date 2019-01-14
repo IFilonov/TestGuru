@@ -1,7 +1,7 @@
 class ResponsesController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_response, only: %i[show update result]
+  before_action :set_response, only: %i[show update result gist]
 
   def show
   end
@@ -17,6 +17,17 @@ class ResponsesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    result = GistQuestionService.new(@response.question).call
+    flash_options = if result.success?
+      { notice: t('.success') }
+    else
+      { alert: t('.failed') }
+    end
+
+    redirect_to @response, flash_options
   end
 
   private
