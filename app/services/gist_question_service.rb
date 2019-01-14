@@ -1,5 +1,4 @@
 class GistQuestionService
-  GIST_TOKEN = ENV['TESTGURU_GIST_TOKEN']
 
 def initialize(question, client: nil)
     @question = question
@@ -9,10 +8,6 @@ def initialize(question, client: nil)
 
   def call
     @client.create_gist(gist_params)
-  end
-
-  def status_ok?
-    @client.last_response.status == 201
   end
 
   private
