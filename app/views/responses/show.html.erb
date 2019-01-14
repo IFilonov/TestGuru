@@ -1,8 +1,8 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6">
-    <h1>Passing the <%= @response.test.title %> test</h1>
-    <h3> Question number/all questions:  <%= @response.correct_questions %> /
-      <%= @response.test.questions.count %>
+    <h1><%= t('.passing_the_test',title: @response.test.title) %></h1>
+    <h3><%= t('.question_number_all_questions', current_number: @response.question_number,
+      count: @response.test.questions.count) %>
     </h3>
     <div class="card">
       <div class="card-header">
@@ -17,7 +17,8 @@
             </li>
           <% end %>
       </ul>
-        <%= form.submit 'Next', class: "btn btn-primary" %>
+        <%= link_to 'Gist question', gist_response_path(@response), method: :post %>
+        <%= form.submit t('.next'), class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

@@ -55,7 +55,20 @@ ru:
       log_out: "Выход"
       welcome: "Добро пожаловать"
       guru: "Гуру"
-      testguru: "ТестГуру"      
+      testguru: "ТестГуру"
+  responses:
+    success: "Gist был успешно сохранен"
+    failed: "Произошла ошибка при сохранении gist"
+    show:
+      passing_the_test: "Прохождение теста %{title}"
+      question_number_all_questions: "Текущий вопрос/Всего вопросов: %{current_number}/%{count}"
+      next: "Следующий"
+    result:
+      test_was_completed: "Тест %{title} завершен"
+      correct_questions: "Корректных вопросов"
+      test_passed: "Тест пройден. Наши поздравления!"
+      test_not_passed: "Тест не пройден!"
+      tests: "Тесты"
   helpers:
     submit:
       test:
