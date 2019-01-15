@@ -22,10 +22,14 @@ class ResponsesController < ApplicationController
   def gist
     service = GistQuestionService.new(@response.question)
     url = service.call
-    flash_options = if service.success?
-      { notice: t('.success') + ": #{url}" }
+    if service.success?
+      flash_options = { notice: t('.success') + ": #{url}" }
+      gist = Gist.new(url: url)
+      gist.user = current_user;
+      gist.question = @response.question
+      gist.save
     else
-      { alert: t('.failed') }
+      flash_options = { alert: t('.failed') }
     end
 
     redirect_to @response, flash_options
