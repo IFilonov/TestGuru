@@ -18,7 +18,7 @@ def initialize(question, client: nil)
 
   def gist_params
     {
-      description: "A question about #{@test.title} from TestGuru",
+      description: I18n.t('.a_question_about', title: @test.title),
       files: {
         'test-guru-question.txt' => {
             content: gist_content
