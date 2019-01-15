@@ -8,6 +8,7 @@ class GitHubClient
 
   def create_gist(params)
     @response = @http_client.create_gist(params.to_json)
+    @response[:url]
   end
 
   def success?

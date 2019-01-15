@@ -21,9 +21,9 @@ class ResponsesController < ApplicationController
 
   def gist
     service = GistQuestionService.new(@response.question)
-    service.call
+    url = service.call
     flash_options = if service.success?
-      { notice: t('.success') }
+      { notice: t('.success') + ": #{url}" }
     else
       { alert: t('.failed') }
     end
