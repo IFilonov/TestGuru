@@ -20,8 +20,9 @@ class ResponsesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@response.question).call
-    flash_options = if result.success?
+    service = GistQuestionService.new(@response.question)
+    service.call
+    flash_options = if service.success?
       { notice: t('.success') }
     else
       { alert: t('.failed') }
