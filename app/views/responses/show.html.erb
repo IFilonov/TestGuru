@@ -17,7 +17,7 @@
             </li>
           <% end %>
       </ul>
-        <%= link_to 'Gist question', gist_response_path(@response), method: :post %>
+        <%= link_to t('.gist_question'), gist_response_path(@response), method: :post %>
         <%= form.submit t('.next'), class: "btn btn-primary" %>
       <% end %>
     </div>

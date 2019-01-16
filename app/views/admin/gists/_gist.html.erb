@@ -1,0 +1,5 @@
+  <tr>
+    <td><%= link_to gist.question.body[0,25].concat("..."), admin_question_path(gist.question) %></td>
+    <td><%= link_to gist.url.reverse.partition("/").first.reverse, gist.url %></td>
+    <td><%= gist.user.email %></td>
+  </tr>

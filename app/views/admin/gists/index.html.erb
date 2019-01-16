@@ -1,0 +1,15 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6 ">
+    <h1><%= t('.header') %></h1>
+    <table class="table">
+      <thead>
+        <th><%= t('.question') %></th>
+        <th><%= t('.url') %></th>
+        <th><%= t('.email') %></th>
+      </thead>
+      <tbody>
+        <%= render @gists %>
+      </tbody>
+    </table>
+  </div>
+</div>
