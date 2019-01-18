@@ -1,7 +1,9 @@
 document.addEventListener('turbolinks:load', function() {
   var control = document.querySelector('.check_password_field')
 
-  control.addEventListener('keyup', checkPasswordsEquals)
+  if (control) {
+    control.addEventListener('keyup', checkPasswordsEquals)
+  }
 })
 
 function checkPasswordsEquals() {
