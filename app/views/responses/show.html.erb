@@ -4,6 +4,8 @@
     <h3><%= t('.question_number_all_questions', current_number: @response.question_number,
       count: @response.test.questions.count) %>
     </h3>
+    <progress value=3 max=100 id="progress" data-progress-percent=<%= progress_result %>>
+    </progress>
     <div class="card">
       <div class="card-header">
          <b> <%= @response.question.body %> </b>
@@ -18,7 +20,7 @@
           <% end %>
       </ul>
         <%= link_to t('.gist_question'), gist_response_path(@response), method: :post %>
-        <%= form.submit t('.next'), class: "btn btn-primary" %>
+        <%= form.submit t('.next'), class: "next_button btn btn-primary" %>
       <% end %>
     </div>
   </div>
