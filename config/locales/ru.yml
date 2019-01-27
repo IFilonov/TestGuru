@@ -70,6 +70,8 @@ ru:
       test_passed: "Тест пройден. Наши поздравления!"
       test_not_passed: "Тест не пройден!"
       tests: "Тесты"
+    update:
+      choice: "Вы должны сделать выбор"
   helpers:
     submit:
       test:
