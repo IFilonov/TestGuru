@@ -50,6 +50,8 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         are_you_sure: "Вы уверены?"
+      new:
+        back: "Назад"  
     nav:
       testguru_admin_panel: "Панель администратора ТестГуру"
       log_out: "Выход"

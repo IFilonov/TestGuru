@@ -17,7 +17,7 @@ if Response.all.count == 0
     users = User.all
   else
     users = User.create([
-      { email: 'bob@bob.com', password: 'password', type: 'Admin', first_name: 'first_name', last_name: 'last_name' }
+      { email: 'author@author', password: 'author', type: 'User', first_name: 'first_name', last_name: 'last_name' }
       ])
   end
 
