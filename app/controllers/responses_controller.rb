@@ -10,12 +10,18 @@ class ResponsesController < ApplicationController
   end
 
   def update
-    @response.accept!(params[:answer_ids])
-    if @response.completed?
-      TestsMailer.completed_test(@response).deliver_now
-      redirect_to result_response_path(@response)
+    answers = params[:answer_ids]
+    if (answers)
+      @response.accept!(answers)
+      if @response.completed?
+        TestsMailer.completed_test(@response).deliver_now
+        redirect_to result_response_path(@response)
+      else
+        render :show
+      end
     else
-      render :show
+      flash_options = { alert: t('.choice') }
+      redirect_to @response, flash_options
     end
   end
 

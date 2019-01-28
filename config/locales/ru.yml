@@ -52,6 +52,8 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         are_you_sure: "Вы уверены?"
+      new:
+        back: "Назад"  
     nav:
       testguru_admin_panel: "Панель администратора ТестГуру"
       log_out: "Выход"
@@ -72,6 +74,8 @@ ru:
       test_passed: "Тест пройден. Наши поздравления!"
       test_not_passed: "Тест не пройден!"
       tests: "Тесты"
+    update:
+      choice: "Вы должны сделать выбор"
   helpers:
     submit:
       test:
