@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_field :body %>
+  <div class="form-group">
+    <textarea class='form-control' id="feedback_body" name="feedback[body]" rows="3">
+    </textarea>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit name=t('.create_feedback') %>
   </div>
 <% end %>

@@ -1,14 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Body:</strong>
+  <strong><%= t('.body') %>:</strong>
   <%= @feedback.body %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @feedback.user %>
-</p>
-
-<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
-<%= link_to 'Back', feedbacks_path %>
+<%= link_to t('.root_path'), root_path %>
