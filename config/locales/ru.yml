@@ -47,12 +47,35 @@ ru:
         edit: "Редактировать вопрос"
         back: "Назад"
         question: "Вопрос"
+        answers: "Ответы"
+        new_answer: "Новый ответ"
       question:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
         are_you_sure: "Вы уверены?"
       new:
+        back: "Назад"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        are_you_sure: "Вы уверены?"
+      show:
+        answer: "Ответ"
+        correct: "Правильный?"
+        edit: "Редактировать"
+        back: "Назад"
+      edit:
+        editing_answer: "Редактировать ответ"
+        back: "Назад"
+      form:
+        correct: "Корректный?"
+        update_answer: "Сохранить ответ"
+      new:
+        new_answer: "Новый ответ"
+        question: "Вопроса"
         back: "Назад"
     nav:
       testguru_admin_panel: "Панель администратора ТестГуру"
