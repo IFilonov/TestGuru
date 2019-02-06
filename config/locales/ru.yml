@@ -20,6 +20,8 @@ ru:
         author: "Автор"
         action: "Действие"
         new: "Создать новый тест"
+        gists: "Заметки"
+        feedbacks: "Отзывы"
       new:
         header: "Создать новый тест"
         back: "Назад"
@@ -83,6 +85,23 @@ ru:
       welcome: "Добро пожаловать"
       guru: "Гуру"
       testguru: "ТестГуру"
+    feedbacks:
+      index:
+        header: "Отзывы"
+        feedback: "Отзыв"
+        user: "Пользователь"
+        back: "Назад"
+        action: "Действие"
+      feedback:
+        are_you_sure: "Вы уверены?"
+        delete: "Удалить"
+    gists:
+      index:
+        header: "Заметки"
+        question: "Вопрос"
+        url: "Путь"
+        email: "Почта"
+        back: "Назад"
   responses:
     success: "Gist был успешно сохранен"
     failed: "Произошла ошибка при сохранении gist"
@@ -143,3 +162,10 @@ ru:
     show:
       body: "Отзыв"
       root_path: "Главная страница"
+  activerecord:
+    errors:
+      models:
+        feedback:
+          attributes:
+            body:
+              blank: "Отзыв не должен быть пустым"

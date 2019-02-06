@@ -13,20 +13,16 @@ class FeedbacksController < ApplicationController
   end
 
   def create
-    @feedback = Feedback.new(feedback_params)
-    @feedback.user = current_user
+    @feedback = current_user.feedbacks.new(feedback_params)
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to @feedback, notice: t('.feedback_was_created') }
-        format.json { render :show, status: :created, location: @feedback }
+        format.html { redirect_to root_path, notice: t('.feedback_was_created') }
         FeedbacksMailer.completed_feedback(@feedback).deliver_now
       else
         format.html { render :new }
-        format.json { render json: @feedback.errors, status: :unprocessable_entity }
       end
     end
   end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -36,6 +32,6 @@ class FeedbacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feedback_params
-      params.require(:feedback).permit(:body, :user_id)
+      params.require(:feedback).permit(:body)
     end
 end

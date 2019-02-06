@@ -1,0 +1,8 @@
+<tr>
+  <td><%= feedback.body %></td>
+  <td><%= feedback.user.email %></td>
+  <td><%= link_to t('.delete'),
+                   admin_feedback_path(feedback),
+                   method: :delete,
+                   data: { confirm: t('.are_you_sure') } %></td>
+</tr>
