@@ -1,7 +1,7 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-10 ">
     <h1 align=center><%= t('.header') %></h1>
-      <%= render 'shared/errors', resource: @test %>    
+      <%= render 'shared/errors', resource: @test %>
       <table class="table">
         <thead>
           <th class="sort-by-title pointer">
@@ -20,5 +20,9 @@
       </table>
       <br>
       <%= link_to t('.new'), new_admin_test_path %>
+      <br>
+      <%= link_to t('.gists'), admin_gists_path %>
+      <br>      
+      <%= link_to t('.feedbacks'), admin_feedbacks_path %>
   </div>
 </div>

@@ -20,6 +20,8 @@ ru:
         author: "Автор"
         action: "Действие"
         new: "Создать новый тест"
+        gists: "Заметки"
+        feedbacks: "Отзывы"
       new:
         header: "Создать новый тест"
         back: "Назад"
@@ -39,7 +41,7 @@ ru:
         edit: "Редактировать тест"
         back: "Назад"
       form_inline:
-        submit: "Ok"  
+        submit: "Ok"
     questions:
       edit:
         back: "Назад"
@@ -47,19 +49,59 @@ ru:
         edit: "Редактировать вопрос"
         back: "Назад"
         question: "Вопрос"
+        answers: "Ответы"
+        new_answer: "Новый ответ"
       question:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
         are_you_sure: "Вы уверены?"
       new:
-        back: "Назад"  
+        back: "Назад"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        are_you_sure: "Вы уверены?"
+      show:
+        answer: "Ответ"
+        correct: "Правильный?"
+        edit: "Редактировать"
+        back: "Назад"
+      edit:
+        editing_answer: "Редактировать ответ"
+        back: "Назад"
+      form:
+        correct: "Корректный?"
+        update_answer: "Сохранить ответ"
+      new:
+        new_answer: "Новый ответ"
+        question: "Вопроса"
+        back: "Назад"
     nav:
       testguru_admin_panel: "Панель администратора ТестГуру"
       log_out: "Выход"
       welcome: "Добро пожаловать"
       guru: "Гуру"
       testguru: "ТестГуру"
+    feedbacks:
+      index:
+        header: "Отзывы"
+        feedback: "Отзыв"
+        user: "Пользователь"
+        back: "Назад"
+        action: "Действие"
+      feedback:
+        are_you_sure: "Вы уверены?"
+        delete: "Удалить"
+    gists:
+      index:
+        header: "Заметки"
+        question: "Вопрос"
+        url: "Путь"
+        email: "Почта"
+        back: "Назад"
   responses:
     success: "Gist был успешно сохранен"
     failed: "Произошла ошибка при сохранении gist"
@@ -108,3 +150,22 @@ ru:
   create_new_question: "Создать новый вопрос для теста %{title}"
   edit_question: "Редактировать вопрос теста %{title}"
   a_question_about: "Вопрос о %{title} от ТестГуру"
+  feedback: "Отправить отзыв"
+  feedbacks:
+    new:
+      feedback: "Новый отзыв"
+      back: "Назад"
+    form:
+      create_feedback: "Создать отзыв"
+    create:
+     feedback_was_created: "Отзыв был успешно создан"
+    show:
+      body: "Отзыв"
+      root_path: "Главная страница"
+  activerecord:
+    errors:
+      models:
+        feedback:
+          attributes:
+            body:
+              blank: "Отзыв не должен быть пустым"
