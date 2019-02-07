@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_31_172018) do
+ActiveRecord::Schema.define(version: 2019_02_07_183103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2019_01_31_172018) do
     t.datetime "updated_at", null: false
     t.boolean "correct", default: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name"
+    t.string "file_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_badges_on_name", unique: true
+  end
+
+  create_table "budge_rules", force: :cascade do |t|
+    t.bigint "badge_id"
+    t.bigint "rule_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_budge_rules_on_badge_id"
+    t.index ["rule_id"], name: "index_budge_rules_on_rule_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -48,6 +65,15 @@ ActiveRecord::Schema.define(version: 2019_01_31_172018) do
     t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
+  create_table "grants", force: :cascade do |t|
+    t.bigint "badge_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_grants_on_badge_id"
+    t.index ["user_id"], name: "index_grants_on_user_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.text "body", null: false
     t.integer "test_id", null: false
@@ -67,6 +93,14 @@ ActiveRecord::Schema.define(version: 2019_01_31_172018) do
     t.index ["question_id"], name: "index_responses_on_question_id"
     t.index ["test_id"], name: "index_responses_on_test_id"
     t.index ["user_id"], name: "index_responses_on_user_id"
+  end
+
+  create_table "rules", force: :cascade do |t|
+    t.string "name"
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_rules_on_name", unique: true
   end
 
   create_table "tests", force: :cascade do |t|
@@ -106,5 +140,9 @@ ActiveRecord::Schema.define(version: 2019_01_31_172018) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "budge_rules", "badges"
+  add_foreign_key "budge_rules", "rules"
   add_foreign_key "feedbacks", "users"
+  add_foreign_key "grants", "badges"
+  add_foreign_key "grants", "users"
 end

@@ -76,3 +76,13 @@ if Response.all.count == 0
     { body: 'POST',   question_id: questions[6].id }
     ])
 end
+Badge.create([
+  { name: 'Badge Fst', file_name: 'public/favicon.ico' },
+  { name: 'Badge Grn', file_name: 'public/favicon.ico' },
+  { name: 'Badge Red', file_name: 'public/favicon.ico' }
+  ])
+Rule.create([
+  { name: 'Category', value: 'Backend' },
+  { name: 'Level', value: '0' },
+  { name: 'Attempt', value: '1' }
+  ])
