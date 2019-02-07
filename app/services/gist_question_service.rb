@@ -1,3 +1,5 @@
+require 'git_hub_client'
+
 class GistQuestionService
 
 def initialize(question, client: nil)

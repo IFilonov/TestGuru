@@ -3,12 +3,14 @@
     <h1><%= t('.header') %></h1>
     <table class="table">
       <thead>
-        <th><%= t('.question') %></th>
-        <th><%= t('.url') %></th>
-        <th><%= t('.email') %></th>
+        <th class="sort-by-title">
+          <%= t('.feedback') %>
+        </th>
+        <th><%= t('.user') %></th>
+        <th colspan="1"><%= t('.action') %></th>
       </thead>
       <tbody>
-        <%= render @gists %>
+        <%= render @feedbacks %>
       </tbody>
     </table>
     <%= link_to t('.back'), :back %>

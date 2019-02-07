@@ -1,0 +1,12 @@
+<h1><%= t('.answer') %></h1>
+
+<p>
+  <%= @answer.question.body %>
+</p>
+
+<p>
+  <b><%= t('.correct') %></b>
+  <%= @answer.correct %>
+</p>
+<%= link_to t('.edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('.back'), admin_question_path(@answer.question) %>
