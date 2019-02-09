@@ -77,9 +77,9 @@ if Response.all.count == 0
     ])
 end
 Badge.create([
-  { name: 'Badge Fst', file_name: 'public/favicon.ico' },
-  { name: 'Badge Grn', file_name: 'public/favicon.ico' },
-  { name: 'Badge Red', file_name: 'public/favicon.ico' }
+  { name: 'Badge Fst', file_name: 'badge.jpg' },
+  { name: 'Badge Grn', file_name: 'badge.jpg' },
+  { name: 'Badge Red', file_name: 'badge.jpg' }
   ])
 Rule.create([
   { name: 'Category', value: 'Backend' },

@@ -18,11 +18,12 @@
           <%= render @tests %>
         </tbody>
       </table>
-      <br>
       <%= link_to t('.new'), new_admin_test_path %>
+      <br>      
+      <%= link_to t('.badges'), admin_badges_path %>
       <br>
       <%= link_to t('.gists'), admin_gists_path %>
-      <br>      
+      <br>
       <%= link_to t('.feedbacks'), admin_feedbacks_path %>
   </div>
 </div>

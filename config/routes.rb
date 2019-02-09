@@ -30,5 +30,7 @@ Rails.application.routes.draw do
     end
     resources :gists, only: :index
     resources :feedbacks, only: %i[index destroy]
+    resources :badges
+    resources :budge_rules
   end
 end

@@ -1,0 +1,15 @@
+<%= form_with model: [:admin, @budge_rule], local: true do |form| %>
+  <%= render 'shared/errors', resource: @budge_rule %>
+
+  <p>
+    <%= form.label :badge_id %>:
+    <%= form.collection_select :badge_id, Badge.all, :id, :name, prompt: true %>
+  </p>
+
+  <p>
+    <%= form.label :rule_id %>:
+    <%= form.collection_select :rule_id, Rule.all, :id, :name, prompt: true %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>

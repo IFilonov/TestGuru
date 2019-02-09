@@ -1,0 +1,8 @@
+<tr>
+  <td><%= budge_rule.badge.name %></td>
+  <td><%= budge_rule.rule.name %></td>
+  <td><%= link_to t('.delete'),
+                   admin_budge_rule_path(budge_rule),
+                   method: :delete,
+                   data: { confirm: t('.are_you_sure') }, class: "btn btn-primary" %></td>
+</tr>
