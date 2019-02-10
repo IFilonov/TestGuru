@@ -197,6 +197,7 @@ ru:
       welcome: "Добро пожаловать"
       guru: "Гуру"
       sign_up: "Регистрация"
+      badges: "Достижения"
   create_new_question: "Создать новый вопрос для теста %{title}"
   edit_question: "Редактировать вопрос теста %{title}"
   a_question_about: "Вопрос о %{title} от ТестГуру"
@@ -219,3 +220,10 @@ ru:
           attributes:
             body:
               blank: "Отзыв не должен быть пустым"
+  badges:
+    index:
+      header: "Мои достижения"
+      badge: "Награда"
+      back: "Назад"
+      date: "Дата выдачи"
+      image: "Орден"
