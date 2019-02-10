@@ -15,6 +15,7 @@ class ResponsesController < ApplicationController
       @response.accept!(answers)
       if @response.completed?
         TestsMailer.completed_test(@response).deliver_now
+        flash.notice = "Поздравляю! У Вас новое достижение!" if BudgeRule.check_badges(@response)
         redirect_to result_response_path(@response)
       else
         render :show

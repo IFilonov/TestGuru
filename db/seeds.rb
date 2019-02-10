@@ -77,12 +77,12 @@ if Response.all.count == 0
     ])
 end
 Badge.create([
-  { name: 'Badge Fst', file_name: 'badge.jpg' },
-  { name: 'Badge Grn', file_name: 'badge.jpg' },
-  { name: 'Badge Red', file_name: 'badge.jpg' }
+  { name: 'Badge by Category', file_name: 'badge.jpg' },
+  { name: 'Badge by Rule', file_name: 'badge.jpg' },
+  { name: 'Badge by Attempt', file_name: 'badge.jpg' }
   ])
 Rule.create([
-  { name: 'Category', value: 'Backend' },
+  { name: 'Category', value: 'Languages' },
   { name: 'Level', value: '0' },
   { name: 'Attempt', value: '1' }
   ])

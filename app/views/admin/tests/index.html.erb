@@ -10,6 +10,7 @@
             <%= octicon 'arrow-down', class: 'text-success hide' %>
           </th>
           <th><%= t('.level') %></th>
+          <th><%= t('.category') %></th>
           <th><%= t('.questions_number') %></th>
           <th><%= t('.author') %></th>
           <th colspan="3"><%= t('.action') %></th>
@@ -19,7 +20,7 @@
         </tbody>
       </table>
       <%= link_to t('.new'), new_admin_test_path %>
-      <br>      
+      <br>
       <%= link_to t('.badges'), admin_badges_path %>
       <br>
       <%= link_to t('.gists'), admin_gists_path %>
