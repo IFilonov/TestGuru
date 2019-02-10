@@ -10,11 +10,9 @@
         <th><%= t('.image') %></th>
       </thead>
       <tbody>
-        <%= render @grants %>
+        <%= render @badges %>
       </tbody>
     </table>
-    <%= link_to t('.badges'), badges_path %>
-    <br>   
-    <%= link_to t('.back'), tests_path %>
+    <%= link_to t('.back'), :back %>
   </div>
 </div>

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :grants,  shallow: true, only: :index
+  resources :badges,  shallow: true, only: :index  
 
   namespace :admin do
     resources :tests do
