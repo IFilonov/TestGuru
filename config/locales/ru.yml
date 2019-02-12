@@ -230,6 +230,9 @@ ru:
       date: "Дата выдачи"
       image: "Орден"
       badges: "Существующие награды"
+    grant:
+      image_file: "Файл изображения"
+      not_found: "не найден"
   badges:
     index:
       header: "Существующие награды"
