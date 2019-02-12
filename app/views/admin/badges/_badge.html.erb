@@ -1,7 +1,11 @@
 <tr>
   <td><%= badge.name %></td>
   <td><%= badge.file_name %></td>
-  <td><%= image_tag("#{badge.file_name}") %></td>
+  <% if File.exist?(Rails.root.join('app','assets','images',badge.file_name))  %>
+    <td><%= image_tag("#{badge.file_name}") %></td>
+  <% else %>
+    <td><%= "#{t('.image_file')} #{badge.file_name} #{t('.not_found')}" %></td>
+  <% end %>
   <td><%= link_to t('.edit'), edit_admin_badge_path(badge), class: "btn btn-primary"  %></td>
   <td><%= link_to t('.delete'),
                    admin_badge_path(badge),

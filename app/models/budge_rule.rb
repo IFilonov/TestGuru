@@ -6,13 +6,13 @@ class BudgeRule < ApplicationRecord
 
   def self.check_badges(response)
     budge_rules = BudgeRule.all
-    budges = false
-    budge_rules.each { |budge_rule|
+    count_badges = 0
+    budge_rules.each do |budge_rule|
       if budge_rule.rule.check_rule(response)
-        response.user.grants.new(badge: budge_rule.badge).save!
-        budges = true
+        response.user.grants.create(badge: budge_rule.badge)
+        count_badges += 1
       end
-    }
-    return budges
+    end
+    return count_badges
   end
 end

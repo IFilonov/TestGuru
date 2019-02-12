@@ -238,3 +238,6 @@ ru:
       date: "Дата создания"
       image: "Орден"
       back: "Назад"
+    badge:
+      image_file: "Файл изображения"
+      not_found: "не найден"

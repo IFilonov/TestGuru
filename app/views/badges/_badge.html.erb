@@ -1,5 +1,9 @@
 <tr>
   <td><%= badge.name %></td>
   <td><%= badge.created_at %></td>
-  <td><%= image_tag("#{badge.file_name}") %></td>
+  <% if File.exist?(Rails.root.join('app','assets','images',badge.file_name))  %>
+    <td><%= image_tag("#{badge.file_name}") %></td>
+  <% else %>
+    <td><%= "#{t('.image_file')} #{badge.file_name} #{t('.not_found')}" %></td>
+  <% end %>
 </tr>
