@@ -7,6 +7,10 @@
     <td><%= test.category.title %></td>
     <td><%= test.questions.size %></td>
     <td><%= test.author.email %></td>
+    <td>
+      <%= content_tag :span, test.response_time, class: 'test-response-time', data: { test_id: test.id } %>
+      <%= render 'form_inline_response', test: test == @test ? @test : test %>
+    </td>
     <td><%= link_to t('.show'), admin_test_path(test), class: "btn btn-primary"   %></td>
     <td><%= link_to t('.edit'),
                     edit_admin_test_path(test),

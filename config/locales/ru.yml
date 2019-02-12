@@ -24,6 +24,7 @@ ru:
         gists: "Заметки"
         feedbacks: "Отзывы"
         badges: "Награды"
+        response_time: "Таймер (мин)"
       new:
         header: "Создать новый тест"
         back: "Назад"
@@ -43,6 +44,8 @@ ru:
         edit: "Редактировать тест"
         back: "Назад"
       form_inline:
+        submit: "Ok"
+      form_inline_response:
         submit: "Ok"
     questions:
       edit:
