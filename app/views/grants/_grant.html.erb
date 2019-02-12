@@ -1,0 +1,9 @@
+<tr>
+  <td><%= grant.badge.name %></td>
+  <td><%= grant.created_at %></td>
+  <% if File.exist?(Rails.root.join('app','assets','images',grant.badge.file_name))  %>
+    <td><%= image_tag("#{grant.badge.file_name}") %></td>
+  <% else %>
+    <td><%= "#{t('.image_file')} #{grant.badge.file_name} #{t('.not_found')}" %></td>
+  <% end %>
+</tr>

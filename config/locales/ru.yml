@@ -16,12 +16,14 @@ ru:
         header: "Доступные тесты"
         title: "Название"
         level: "Уровень"
+        category: "Категория"
         questions_number: "Количество вопросов"
         author: "Автор"
         action: "Действие"
         new: "Создать новый тест"
         gists: "Заметки"
         feedbacks: "Отзывы"
+        badges: "Награды"
       new:
         header: "Создать новый тест"
         back: "Назад"
@@ -102,6 +104,44 @@ ru:
         url: "Путь"
         email: "Почта"
         back: "Назад"
+    badges:
+      index:
+        header: "Награды"
+        badge: "Награда"
+        file_name: "Имя файла"
+        back: "Назад"
+        action: "Действие"
+        new: "Новая награда"
+        image: "Изображение"
+        rules: "Привязка наград к правилам"
+      badge:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        are_you_sure: "Вы уверены?"
+        image_file: "Файл изображения"
+        not_found: "не найден"
+      new:
+        header: "Создать награду"
+        back: "Назад"
+      edit:
+        header: "Редактировать награду"
+        back: "Назад"
+    budge_rules:
+      new:
+        header: "Новая привязка награды к правилу"
+        back: "Назад"
+      index:
+        header: "Привязка наград к правилам"
+        badge: "Награда"
+        rule: "Правило"
+        action: "Действие"
+        new: "Создать новую привязку награды к правилу"
+        back: "Назад"
+      budge_rule:
+        delete: "Удалить"
+        edit: "Редактировать"
+        are_you_sure: "Вы уверены?"
   responses:
     success: "Gist был успешно сохранен"
     failed: "Произошла ошибка при сохранении gist"
@@ -126,6 +166,11 @@ ru:
       question:
         create: "Создать вопрос"
         update: "Редактировать вопрос"
+      badge:
+        create: "Создать награду"
+        update: "Обновить награду"
+      budge_rule:
+        create: "Создать привязку"
     label:
       test:
         title: "Название"
@@ -133,6 +178,13 @@ ru:
         category_id: "Категория"
       question:
         body: "Содержание"
+      badge:
+        name: "Название"
+        file_name: "Имя файла"
+        rule_id: "Правило"
+      budge_rule:
+        badge_id: "Награда"
+        rule_id: "Правило"
     select:
       prompt: "Пожалуйста, выберите"
   layouts:
@@ -147,6 +199,7 @@ ru:
       welcome: "Добро пожаловать"
       guru: "Гуру"
       sign_up: "Регистрация"
+      grants: "Достижения"
   create_new_question: "Создать новый вопрос для теста %{title}"
   edit_question: "Редактировать вопрос теста %{title}"
   a_question_about: "Вопрос о %{title} от ТестГуру"
@@ -169,3 +222,25 @@ ru:
           attributes:
             body:
               blank: "Отзыв не должен быть пустым"
+  grants:
+    index:
+      header: "Мои достижения"
+      badge: "Награда"
+      back: "Назад"
+      date: "Дата выдачи"
+      image: "Орден"
+      badges: "Существующие награды"
+    grant:
+      image_file: "Файл изображения"
+      not_found: "не найден"
+  badges:
+    index:
+      header: "Существующие награды"
+      badge: "Награда"
+      back: "Назад"
+      date: "Дата создания"
+      image: "Орден"
+      back: "Назад"
+    badge:
+      image_file: "Файл изображения"
+      not_found: "не найден"

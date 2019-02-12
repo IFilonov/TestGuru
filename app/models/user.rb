@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   has_many :responses
   has_many :tests, through: :responses
+  has_many :grants
+  has_many :badges, through: :grants
   has_many :test, foreign_key: "author_id"
   has_many :gists
   has_many :feedbacks

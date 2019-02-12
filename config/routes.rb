@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :grants,  shallow: true, only: :index
+  resources :badges,  shallow: true, only: :index  
+
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member
@@ -30,5 +33,7 @@ Rails.application.routes.draw do
     end
     resources :gists, only: :index
     resources :feedbacks, only: %i[index destroy]
+    resources :badges
+    resources :budge_rules
   end
 end

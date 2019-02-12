@@ -76,3 +76,13 @@ if Response.all.count == 0
     { body: 'POST',   question_id: questions[6].id }
     ])
 end
+Badge.create([
+  { name: 'Badge by Category', file_name: 'badge.jpg' },
+  { name: 'Badge by Rule', file_name: 'badge.jpg' },
+  { name: 'Badge by Attempt', file_name: 'badge.jpg' }
+  ])
+Rule.create([
+  { name: 'Category', value: 'Languages' },
+  { name: 'Level', value: '0' },
+  { name: 'Attempt', value: '1' }
+  ])

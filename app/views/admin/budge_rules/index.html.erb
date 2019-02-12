@@ -1,0 +1,18 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6 ">
+    <h1><%= t('.header') %></h1>
+    <table class="table">
+      <thead>
+        <th><%= t('.badge') %></th>
+        <th><%= t('.rule') %></th>
+        <th colspan="1"><%= t('.action') %></th>
+      </thead>
+      <tbody>
+        <%= render @budge_rules %>
+      </tbody>
+    </table>
+    <%= link_to t('.new'), new_admin_budge_rule_path %>
+    <br>
+    <%= link_to t('.back'), admin_badges_path %>
+  </div>
+</div>
