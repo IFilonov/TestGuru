@@ -4,9 +4,13 @@ class ResponsesController < ApplicationController
   before_action :set_response, only: %i[show update result gist]
 
   def show
+    if $time_limit_sec.nil?
+      $time_limit_sec = Time.now.to_i + @response.test.response_time.to_i * 60
+    end
   end
 
   def result
+    reset_time
   end
 
   def update
@@ -16,13 +20,18 @@ class ResponsesController < ApplicationController
       if @response.completed?
         TestsMailer.completed_test(@response).deliver_now
         flash.notice = "Поздравляю! У Вас новое достижение!" if BudgeRule.check_badges(@response) > 0
-        redirect_to result_response_path(@response)
+        redirect_to result_response_path(@response) and return
       else
-        render :show
+        if time_finished?
+          flash.alert = "Закончилось время прохождения теста"
+          redirect_to result_response_path(@response)
+        else
+          render :show
+        end
       end
     else
       flash_options = { alert: t('.choice') }
-      redirect_to @response, flash_options
+      redirect_to @response, flash_options and return
     end
   end
 
@@ -45,5 +54,13 @@ class ResponsesController < ApplicationController
   private
   def set_response
      @response = Response.find(params[:id])
+  end
+
+  def reset_time
+    $time_limit_sec = nil
+  end
+
+  def time_finished?
+    Time.now.to_i - $time_limit_sec.to_i > 0
   end
 end

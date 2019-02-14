@@ -9,6 +9,7 @@ class TestsController < ApplicationController
   end
 
   def start
+    reset_time
     current_user.tests.push(@test)
     redirect_to current_user.current_test(@test)
   end
@@ -21,5 +22,9 @@ class TestsController < ApplicationController
 
   def rescue_with_test_not_found
     render html: "<b>Couldn't find test with id = #{params[:id]}</b>".html_safe
+  end
+
+  def reset_time
+    $time_limit_sec = nil
   end
 end
