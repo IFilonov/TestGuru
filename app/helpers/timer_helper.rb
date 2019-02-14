@@ -1,8 +1,7 @@
 module TimerHelper
 
   def timer_string
-    seconds = $time_limit_sec - Time.now.to_i
-    seconds = 0 if seconds < 0
+    seconds = time_response
     hour = seconds / 60 / 60
     min = seconds / 60
     sec = seconds % 60
