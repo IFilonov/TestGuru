@@ -25,7 +25,7 @@ function formInlineLinkHandler(event) {
 function formInlineHandler(testId) {
   var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]')
   var testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]')
-  var testResponseTime = document.querySelector('.test-response-time[data-test-id="' + testId + '"]')
+  var testTimeLimit = document.querySelector('.test-time-limit[data-test-id="' + testId + '"]')
   var formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
   var formInlineResponse = document.querySelector('.form-inline-response[data-test-id="' + testId + '"]')
 
@@ -34,13 +34,13 @@ function formInlineHandler(testId) {
       testTitle.classList.add('hide')
       formInline.classList.remove('hide')
       link.textContent = 'Отменить'
-      testResponseTime.classList.add('hide')
+      testTimeLimit.classList.add('hide')
       formInlineResponse.classList.remove('hide')
     } else {
       testTitle.classList.remove('hide')
       formInline.classList.add('hide')
       link.textContent = 'Редактировать'
-      testResponseTime.classList.remove('hide')
+      testTimeLimit.classList.remove('hide')
       formInlineResponse.classList.add('hide')
     }
   }

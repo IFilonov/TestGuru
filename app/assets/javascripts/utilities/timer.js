@@ -1,8 +1,8 @@
 document.addEventListener('turbolinks:load', function() {
     var my_timer = document.getElementById("my_timer");
     if (my_timer) {
-      time_response = my_timer.dataset.timeResponse
-      if (time_response > 0) startTimer();
+      time_limit = my_timer.dataset.timeLimit
+      if (time_limit > 0) startTimer();
     };
 
     function startTimer() {

@@ -24,7 +24,7 @@ ru:
         gists: "Заметки"
         feedbacks: "Отзывы"
         badges: "Награды"
-        response_time: "Таймер (мин)"
+        time_limit: "Таймер (мин)"
       new:
         header: "Создать новый тест"
         back: "Назад"
@@ -179,6 +179,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        time_limit: "Таймер (мин)"
       question:
         body: "Содержание"
       badge:

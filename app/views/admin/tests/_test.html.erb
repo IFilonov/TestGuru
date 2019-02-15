@@ -8,8 +8,8 @@
     <td><%= test.questions.size %></td>
     <td><%= test.author.email %></td>
     <td>
-      <%= content_tag :span, test.response_time, class: 'test-response-time', data: { test_id: test.id } %>
-      <%= render 'form_inline_response', test: test == @test ? @test : test %>
+      <%= content_tag :span, test.time_limit, class: 'test-time-limit', data: { test_id: test.id } %>
+      <%= render 'form_inline_time_limit', test: test == @test ? @test : test %>
     </td>
     <td><%= link_to t('.show'), admin_test_path(test), class: "btn btn-primary"   %></td>
     <td><%= link_to t('.edit'),

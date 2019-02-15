@@ -6,7 +6,11 @@
     </h3>
     <progress value=3 max=100 id="progress" data-progress-percent=<%= progress_result %>>
     </progress>
-    <span id="my_timer" data-time-response=<%= time_response %> style="font-weight: bold;"><%= timer_string %></span>
+      <span id="my_timer" data-time-limit=<%= @response.time_remains %> style="font-weight: bold;">
+        <% if @response.time_limits? %>
+          <%= timer_string(@response.time_remains) %>
+        <% end %>
+      </span>
     <div class="card">
       <div class="card-header">
          <b> <%= @response.question.body %> </b>
