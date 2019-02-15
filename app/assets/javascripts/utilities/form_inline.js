@@ -27,21 +27,21 @@ function formInlineHandler(testId) {
   var testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]')
   var testTimeLimit = document.querySelector('.test-time-limit[data-test-id="' + testId + '"]')
   var formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
-  var formInlineResponse = document.querySelector('.form-inline-response[data-test-id="' + testId + '"]')
+  var formInlineTimeLimit = document.querySelector('.form-inline-time-limit[data-test-id="' + testId + '"]')
 
-  if (formInline || formInlineResponse) {
-    if (formInline.classList.contains('hide') || formInlineResponse.classList.contains('hide')) {
+  if (formInline || formInlineTimeLimit) {
+    if (formInline.classList.contains('hide') || formInlineTimeLimit.classList.contains('hide')) {
       testTitle.classList.add('hide')
       formInline.classList.remove('hide')
       link.textContent = 'Отменить'
       testTimeLimit.classList.add('hide')
-      formInlineResponse.classList.remove('hide')
+      formInlineTimeLimit.classList.remove('hide')
     } else {
       testTitle.classList.remove('hide')
       formInline.classList.add('hide')
       link.textContent = 'Редактировать'
       testTimeLimit.classList.remove('hide')
-      formInlineResponse.classList.add('hide')
+      formInlineTimiLimit.classList.add('hide')
     }
   }
 }
