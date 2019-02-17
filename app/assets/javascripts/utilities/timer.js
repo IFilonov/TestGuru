@@ -2,34 +2,26 @@ document.addEventListener('turbolinks:load', function() {
     var my_timer = document.getElementById("my_timer");
     if (my_timer) {
       time_limit = my_timer.dataset.timeLimit
-      if (time_limit > 0) startTimer();
+      if (time_limit > 0) startTimer(time_limit);
     };
 
-    function startTimer() {
-    var my_timer = document.getElementById("my_timer");
-    var time = my_timer.innerHTML;
-    var arr = time.split(":");
-    var h = arr[0];
-    var m = arr[1];
-    var s = arr[2];
-    if (s == 0) {
-      if (m == 0) {
-        if (h == 0) {
-          alert("Время вышло");
-          window.location.replace(window.location + '/result')
-          return;
-        }
-        h--;
-        m = 60;
-        if (h < 10) h = "0" + h;
-      }
-      m--;
-      if (m < 10) m = "0" + m;
-      s = 59;
+    function startTimer(time) {
+    var h = Math.floor(time / 60 / 60);
+    var m = Math.floor(time / 60 - h * 60);
+    var s = time % 60;
+    if (time <= 0) {
+      alert("Время вышло");
+      window.location.replace(window.location + '/result')
+      return;
     }
-    else s--;
+    if (m < 10) m = "0" + m;
+    if (h < 10) h = "0" + h;
     if (s < 10) s = "0" + s;
-    document.getElementById("my_timer").innerHTML = h+":"+m+":"+s;
-    setTimeout(startTimer, 1000);
+    if (time > 0) time--;
+    var my_timer = document.getElementById("my_timer");
+    if (my_timer && time > 0) {
+      my_timer.innerHTML = h+":"+m+":"+s;
+      setTimeout(startTimer, 1000, time);
+    }
   }
 })
