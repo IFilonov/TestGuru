@@ -4,13 +4,14 @@
     <h3><%= t('.question_number_all_questions', current_number: @response.question_number,
       count: @response.test.questions.count) %>
     </h3>
-    <progress value=3 max=100 id="progress" data-progress-percent=<%= progress_result %>>
-    </progress>
-      <span id="my_timer" data-time-limit=<%= @response.time_remains %> style="font-weight: bold;">
-        <% if @response.time_limits? %>
-          <%= timer_string(@response.time_remains) %>
-        <% end %>
-      </span>
+    <div class="progress">
+      <div class="progress-bar bg-warning" id="progress" role="progressbar" style="width: 15" aria-valuenow="0" aria-valuemin="20" aria-valuemax="100" data-progress-percent=<%= progress_result %>></div>
+    </div>
+    <span id="my_timer" data-time-limit=<%= @response.time_remains %> style="font-weight: bold;">
+      <% if @response.time_limits? %>
+        <%= timer_string(@response.time_remains) %>
+      <% end %>
+    </span>
     <div class="card">
       <div class="card-header">
          <b> <%= @response.question.body %> </b>

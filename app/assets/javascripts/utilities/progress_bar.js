@@ -1,6 +1,7 @@
 document.addEventListener('turbolinks:load', function() {
-  var progress = document.getElementById('progress')
+  var progress = document.getElementById('progress');
   if (progress) {
-    progress.value = progress.dataset.progressPercent
+    percent = progress.dataset.progressPercent
+    progress.style.width = percent.toString() + "%";
   }
 })
