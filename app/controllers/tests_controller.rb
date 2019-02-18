@@ -22,4 +22,8 @@ class TestsController < ApplicationController
   def rescue_with_test_not_found
     render html: "<b>Couldn't find test with id = #{params[:id]}</b>".html_safe
   end
+
+  def reset_time
+    $time_limit_sec = nil
+  end
 end

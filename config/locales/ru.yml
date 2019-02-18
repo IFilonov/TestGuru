@@ -24,6 +24,7 @@ ru:
         gists: "Заметки"
         feedbacks: "Отзывы"
         badges: "Награды"
+        time_limit: "Таймер (мин)"
       new:
         header: "Создать новый тест"
         back: "Назад"
@@ -43,6 +44,8 @@ ru:
         edit: "Редактировать тест"
         back: "Назад"
       form_inline:
+        submit: "Ok"
+      form_inline_time_limit:
         submit: "Ok"
     questions:
       edit:
@@ -176,6 +179,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        time_limit: "Таймер (мин)"
       question:
         body: "Содержание"
       badge:

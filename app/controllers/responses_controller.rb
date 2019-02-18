@@ -2,6 +2,7 @@ class ResponsesController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_response, only: %i[show update result gist]
+  before_action :time_finished?, only: :update
 
   def show
   end
@@ -40,6 +41,13 @@ class ResponsesController < ApplicationController
     end
 
     redirect_to @response, flash_options
+  end
+
+  def time_finished?
+    if @response.time_finished?
+      flash.alert = "Закончилось время прохождения теста"
+      redirect_to result_response_path(@response)
+    end
   end
 
   private
