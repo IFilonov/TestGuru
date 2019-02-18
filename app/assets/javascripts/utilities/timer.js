@@ -6,20 +6,20 @@ document.addEventListener('turbolinks:load', function() {
     };
 
     function startTimer(time) {
-    var h = Math.floor(time / 60 / 60);
-    var m = Math.floor(time / 60 - h * 60);
-    var s = time % 60;
     if (time <= 0) {
       alert("Время вышло");
       window.location.replace(window.location + '/result')
       return;
     }
+    var h = Math.floor(time / 60 / 60);
+    var m = Math.floor(time / 60 - h * 60);
+    var s = time % 60;
     if (m < 10) m = "0" + m;
     if (h < 10) h = "0" + h;
     if (s < 10) s = "0" + s;
-    if (time > 0) time--;
+    time--;
     var my_timer = document.getElementById("my_timer");
-    if (my_timer && time > 0) {
+    if (my_timer) {
       my_timer.innerHTML = h+":"+m+":"+s;
       setTimeout(startTimer, 1000, time);
     }
